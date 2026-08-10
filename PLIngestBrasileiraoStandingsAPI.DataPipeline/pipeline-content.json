@@ -34,9 +34,6 @@
                 "source": {
                   "type": "RestSource",
                   "requestMethod": "GET",
-                  "additionalHeaders": {
-                    "Authorization": "Token 25f80b2353b9a825e791f3a99e4d118fcde84b5c"
-                  },
                   "paginationRules": {
                     "supportRFC5988": "true"
                   },
@@ -45,7 +42,10 @@
                   "datasetSettings": {
                     "type": "RestResource",
                     "typeProperties": {
-                      "relativeUrl": "@concat(   'leagues/9/standings/?season_id=',   string(item().season_id) )"
+                      "relativeUrl": {
+                        "value": "@concat(   'leagues/9/standings/?season_id=',   string(item().season_id) )",
+                        "type": "Expression"
+                      }
                     },
                     "schema": [],
                     "externalReferences": {
@@ -60,14 +60,17 @@
                     "type": "JsonWriteSettings"
                   },
                   "storeSettings": {
-                    "type": "LakehouseWriteSettings"
+                    "type": "AzureBlobStorageWriteSettings"
                   },
                   "datasetSettings": {
                     "type": "Json",
                     "typeProperties": {
                       "location": {
                         "type": "LakehouseLocation",
-                        "folderPath": "@concat(   'Bronze/api/standings/',   string(item().year) )",
+                        "folderPath": {
+                          "value": "@concat(   'Bronze/api/standings/',   string(item().year) )",
+                          "type": "Expression"
+                        },
                         "fileName": "standings.json"
                       }
                     },
