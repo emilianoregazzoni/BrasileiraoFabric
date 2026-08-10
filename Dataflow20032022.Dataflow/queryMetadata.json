@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow20032022",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "silverBrasileirao20032022": {
+      "queryId": "a9be8407-7871-4f16-b697-a770c595d802",
+      "queryName": "silverBrasileirao20032022",
+      "loadEnabled": false
+    },
+    "silverBrasileirao20032022_DataDestination": {
+      "queryId": "a4f2b396-9cba-432f-b545-cb8a2dd29670",
+      "queryName": "silverBrasileirao20032022_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://lodenestor-my.sharepoint.com/personal/emilianoregazzoni_lodenestor_onmicrosoft_com/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"f457d431-3482-466c-9106-43bd8c589175\",\"DatasourceId\":\"b5571c9a-7bcc-4ea7-bb65-aea63b81e153\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f457d431-3482-466c-9106-43bd8c589175\",\"DatasourceId\":\"8dae111e-5128-4824-a1fb-7129df4676e8\"}"
+    }
+  ]
+}

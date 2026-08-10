@@ -1,0 +1,16 @@
+relationship 402e08e4-cfb1-172b-515c-da61af21aed4
+	fromColumn: dimBrasileirao.teamKey
+	toColumn: dimTeam.teamKey
+
+relationship 7c7d8dc5-d7b4-0310-a7c4-56ad976bb367
+	fromColumn: dimTeam.teamName
+	toColumn: brasileiraoCurrent.teamName
+
+relationship 355343c6-bdb7-43a7-0e5b-0971d4476604
+	fromColumn: scorers.teamName
+	toColumn: brasileiraoCurrent.teamName
+
+relationship 9242ea46-9aaa-db96-5c23-4f56a50c3507
+	fromColumn: dimBrasileirao.year
+	toColumn: DimSeason.Year
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "PLIngestBrasileiraoStandingsAPI"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9d65c89a-e744-b71a-4be7-d2a467671e6e"
+  }
+}

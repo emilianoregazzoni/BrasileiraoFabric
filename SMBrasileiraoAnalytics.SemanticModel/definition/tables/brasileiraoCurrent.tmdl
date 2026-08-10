@@ -1,0 +1,149 @@
+table brasileiraoCurrent
+	lineageTag: 5ba7053f-c111-4e79-ac40-8863328933d5
+	sourceLineageTag: [dbo].[brasileiraoCurrent]
+
+	column season_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c50f91a7-55ba-41e4-a694-c913d07731a2
+		sourceLineageTag: season_id
+		summarizeBy: sum
+		sourceColumn: season_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e194407-2695-4f12-90cb-658c81c9016c
+		sourceLineageTag: year
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column position
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c387b99-c991-4953-9fdf-9ac09aa6149d
+		sourceLineageTag: position
+		summarizeBy: sum
+		sourceColumn: position
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e946aaf-14a5-4498-a7d9-9654ae1d33ac
+		sourceLineageTag: team_id
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team
+		dataType: string
+		lineageTag: 769138e4-4fbc-4456-8f77-9310e5825867
+		sourceLineageTag: team
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamName
+		dataType: string
+		lineageTag: cd5cb74f-7c77-46ff-adba-71c799a63ba6
+		sourceLineageTag: teamName
+		summarizeBy: none
+		sourceColumn: teamName
+
+		annotation SummarizationSetBy = Automatic
+
+	column points
+		dataType: int64
+		formatString: 0
+		lineageTag: 8826f24a-646c-493a-a398-3845bb50386a
+		sourceLineageTag: points
+		summarizeBy: sum
+		sourceColumn: points
+
+		annotation SummarizationSetBy = Automatic
+
+	column games
+		dataType: int64
+		formatString: 0
+		lineageTag: 26988402-e324-4c7e-84df-5c94b80ec6d8
+		sourceLineageTag: games
+		summarizeBy: sum
+		sourceColumn: games
+
+		annotation SummarizationSetBy = Automatic
+
+	column victories
+		dataType: int64
+		formatString: 0
+		lineageTag: 01bb5434-5453-4fb6-b8e0-af8da64eeefe
+		sourceLineageTag: victories
+		summarizeBy: sum
+		sourceColumn: victories
+
+		annotation SummarizationSetBy = Automatic
+
+	column draws
+		dataType: int64
+		formatString: 0
+		lineageTag: dbe22277-1a05-468f-97d5-5bd9542ade2d
+		sourceLineageTag: draws
+		summarizeBy: sum
+		sourceColumn: draws
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses
+		dataType: int64
+		formatString: 0
+		lineageTag: 17b3643c-b14b-48f1-b583-b0f7f5703826
+		sourceLineageTag: losses
+		summarizeBy: sum
+		sourceColumn: losses
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals_scored
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cf4709d-21db-4f78-a416-6a71bea475ee
+		sourceLineageTag: goals_scored
+		summarizeBy: sum
+		sourceColumn: goals_scored
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals_against
+		dataType: int64
+		formatString: 0
+		lineageTag: 3eae9e57-5b54-47a2-bc3b-46f6d871bc56
+		sourceLineageTag: goals_against
+		summarizeBy: sum
+		sourceColumn: goals_against
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals_difference
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c6fa108-92b5-4579-b13e-fa9ee65a8a08
+		sourceLineageTag: goals_difference
+		summarizeBy: sum
+		sourceColumn: goals_difference
+
+		annotation SummarizationSetBy = Automatic
+
+	partition brasileiraoCurrent = entity
+		mode: directLake
+		source
+			entityName: brasileiraoCurrent
+			schemaName: dbo
+			expressionSource: 'DirectLake - DWBrasileirao'
+

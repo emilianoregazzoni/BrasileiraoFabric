@@ -1,0 +1,477 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "a077b7658a210aa09b89",
+  "position": {
+    "x": 585.12014285159739,
+    "y": 7.950001940918443,
+    "z": 6001,
+    "height": 661.44016148441449,
+    "width": 655.08015993167965,
+    "tabOrder": 6001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "position"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.position)",
+              "nativeQueryRef": "Pos",
+              "displayName": "Pos"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "brasileiraoCurrent"
+                    }
+                  },
+                  "Property": "teamName"
+                }
+              },
+              "queryRef": "brasileiraoCurrent.teamName",
+              "nativeQueryRef": "Team",
+              "displayName": "Team"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "points"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.points)",
+              "nativeQueryRef": "Points",
+              "displayName": "Points"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "games"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.games)",
+              "nativeQueryRef": "Sum of games"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "victories"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.victories)",
+              "nativeQueryRef": "W",
+              "displayName": "W"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "draws"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.draws)",
+              "nativeQueryRef": "D",
+              "displayName": "D"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "losses"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.losses)",
+              "nativeQueryRef": "L",
+              "displayName": "L"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "goals_scored"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.goals_scored)",
+              "nativeQueryRef": "GF",
+              "displayName": "GF"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "goals_against"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.goals_against)",
+              "nativeQueryRef": "GC",
+              "displayName": "GC"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "brasileiraoCurrent"
+                        }
+                      },
+                      "Property": "goals_difference"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(brasileiraoCurrent.goals_difference)",
+              "nativeQueryRef": "Diff",
+              "displayName": "Diff"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "brasileiraoCurrent"
+                      }
+                    },
+                    "Property": "points"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "998c190425702937d345",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "points"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b9b5edfdbdb99b025040",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "victories"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "10afb8000bb6aaed4557",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "losses"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f6998ceb34d4b3d5ecd6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "draws"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1451661d3a1a26571a10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "brasileiraoCurrent"
+              }
+            },
+            "Property": "teamName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "52559d8f120251079429",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "goals_difference"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "85781c86d9216b3819b6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "position"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f7be9f4b7a541bedd1c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "goals_scored"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "751ba64550ca678c892c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "goals_against"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c13971c103c80252e7a0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "brasileiraoCurrent"
+                  }
+                },
+                "Property": "games"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

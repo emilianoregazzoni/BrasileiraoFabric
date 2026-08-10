@@ -1,0 +1,30 @@
+table dimTeam
+	lineageTag: 735cda3d-3cfd-4e7a-ad06-952c0dc6bf06
+	sourceLineageTag: [dbo].[dimTeam]
+
+	column teamKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a6a78090-ee0a-47cb-9f13-688a44b49aa7
+		sourceLineageTag: teamKey
+		summarizeBy: none
+		sourceColumn: teamKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamName
+		dataType: string
+		lineageTag: 5941b89c-efe9-45fc-82f1-01b3640bd47d
+		sourceLineageTag: teamName
+		summarizeBy: none
+		sourceColumn: teamName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimTeam = entity
+		mode: directLake
+		source
+			entityName: dimTeam
+			schemaName: dbo
+			expressionSource: 'DirectLake - DWBrasileirao'
+

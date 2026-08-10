@@ -1,0 +1,322 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "golddimteams"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "lakehouseBrasileirao",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "72fda460-077f-abc0-4afb-ab01490b5693",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "8dae111e-5128-4824-a1fb-7129df4676e8"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "tableOption": "autoCreate",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "writeBehavior": "Insert",
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "dimTeam"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "DWBrasileirao",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "ce0f85db-b0b4-bd4b-4730-cee62f966fab",
+                    "endpoint": "ddrye4b6dfqupb2wx5o5s5yede-nhfr6fo73zoe3hy7ay4kxzo7ye.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "teamKey",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "teamKey",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "teamName",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "teamName",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "CopygoldDimTeams",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "goldbrasileiraohistorical"
+              },
+              "schema": [],
+              "connectionSettings": {
+                "name": "lakehouseBrasileirao",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "72fda460-077f-abc0-4afb-ab01490b5693",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "externalReferences": {
+                    "connection": "8dae111e-5128-4824-a1fb-7129df4676e8"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "tableOption": "autoCreate",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "writeBehavior": "Insert",
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "dimBrasileirao"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "DWBrasileirao",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "ce0f85db-b0b4-bd4b-4730-cee62f966fab",
+                    "endpoint": "ddrye4b6dfqupb2wx5o5s5yede-nhfr6fo73zoe3hy7ay4kxzo7ye.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "year",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "year",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "position",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "position",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "teamKey",
+                  "type": "Int32",
+                  "physicalType": "integer"
+                },
+                "sink": {
+                  "name": "teamKey",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "teamName",
+                  "type": "String",
+                  "physicalType": "string"
+                },
+                "sink": {
+                  "name": "teamName",
+                  "physicalType": "varchar",
+                  "length": "8000"
+                }
+              },
+              {
+                "source": {
+                  "name": "points",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "points",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "games",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "games",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "victories",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "victories",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "draws",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "draws",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "losses",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "losses",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "goals_scored",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "goals_scored",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "goals_against",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "goals_against",
+                  "physicalType": "bigint"
+                }
+              },
+              {
+                "source": {
+                  "name": "goals_difference",
+                  "type": "Int64",
+                  "physicalType": "long"
+                },
+                "sink": {
+                  "name": "goals_difference",
+                  "physicalType": "bigint"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "CopygoldBrasileiraoHistorical",
+        "dependsOn": []
+      }
+    ]
+  }
+}

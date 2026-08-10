@@ -1,0 +1,200 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "vSeasons",
+          "value": [
+            {
+              "year": 2026,
+              "season_id": 28
+            }
+          ]
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "vSeasons",
+        "description": "",
+        "dependsOn": []
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@variables('vSeasons')",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "RestSource",
+                  "requestMethod": "GET",
+                  "additionalHeaders": {
+                    "Authorization": "Token 25f80b2353b9a825e791f3a99e4d118fcde84b5c"
+                  },
+                  "paginationRules": {
+                    "supportRFC5988": "true"
+                  },
+                  "httpRequestTimeout": "00:01:40",
+                  "requestInterval": "00.00:00:00.010",
+                  "datasetSettings": {
+                    "type": "RestResource",
+                    "typeProperties": {
+                      "relativeUrl": "@concat(   'leagues/9/standings/?season_id=',   string(item().season_id) )"
+                    },
+                    "schema": [],
+                    "externalReferences": {
+                      "connection": "cde1ce61-51d3-4006-8417-d290262ce941"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "JsonSink",
+                  "formatSettings": {
+                    "type": "JsonWriteSettings"
+                  },
+                  "storeSettings": {
+                    "type": "LakehouseWriteSettings"
+                  },
+                  "datasetSettings": {
+                    "type": "Json",
+                    "typeProperties": {
+                      "location": {
+                        "type": "LakehouseLocation",
+                        "folderPath": "@concat(   'Bronze/api/standings/',   string(item().year) )",
+                        "fileName": "standings.json"
+                      }
+                    },
+                    "schema": {},
+                    "connectionSettings": {
+                      "name": "lakehouseBrasileirao",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "72fda460-077f-abc0-4afb-ab01490b5693",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Files"
+                        },
+                        "externalReferences": {
+                          "connection": "8dae111e-5128-4824-a1fb-7129df4676e8"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "enableStaging": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "copyData",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "FEStandingsBySeason",
+        "dependsOn": [
+          {
+            "activity": "vSeasons",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "additionalHeaders": {
+              "Authorization": "Token 25f80b2353b9a825e791f3a99e4d118fcde84b5c"
+            },
+            "paginationRules": {
+              "supportRFC5988": "true"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "leagues/9/standings/?season_id=31"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "cde1ce61-51d3-4006-8417-d290262ce941"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "JsonSink",
+            "formatSettings": {
+              "type": "JsonWriteSettings"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "Json",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": "Bronze/api/standings/2023",
+                  "fileName": "standings.json"
+                }
+              },
+              "schema": {},
+              "connectionSettings": {
+                "name": "lakehouseBrasileirao",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "490b5693-ab01-4afb-abc0-077f72fda460",
+                    "workspaceId": "151fcb69-dedf-4d5c-9f1f-0638abe5dfc1",
+                    "rootFolder": "Files"
+                  },
+                  "externalReferences": {
+                    "connection": "8dae111e-5128-4824-a1fb-7129df4676e8"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "backup",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      }
+    ],
+    "variables": {
+      "vSeasons": {
+        "type": "Array"
+      }
+    }
+  }
+}

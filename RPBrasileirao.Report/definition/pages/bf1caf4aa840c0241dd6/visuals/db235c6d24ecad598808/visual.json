@@ -1,0 +1,159 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "db235c6d24ecad598808",
+  "position": {
+    "x": 585.12014285159739,
+    "y": 0,
+    "z": 0,
+    "height": 394.32009626955477,
+    "width": 694.83016963627188,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimBrasileirao"
+                    }
+                  },
+                  "Property": "teamName"
+                }
+              },
+              "queryRef": "dimBrasileirao.teamName",
+              "nativeQueryRef": "teamName",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dax"
+                    }
+                  },
+                  "Property": "qtyTitulos"
+                }
+              },
+              "queryRef": "dax.qtyTitulos",
+              "nativeQueryRef": "championships",
+              "displayName": "championships"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dax"
+                  }
+                },
+                "Property": "qtyTitulos"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#548AFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Championships quantity'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F8F9FC'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c476817333ee376ba801",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimBrasileirao"
+              }
+            },
+            "Property": "teamName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6f1597a689a985c7d294",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dax"
+              }
+            },
+            "Property": "qtyTitulos"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "DWBrasileirao",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ce0f85db-b0b4-bd4b-4730-cee62f966fab"
+  }
+}

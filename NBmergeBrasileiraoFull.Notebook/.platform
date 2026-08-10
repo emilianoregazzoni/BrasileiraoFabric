@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "NBmergeBrasileiraoFull"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "db4305ae-372b-bc75-4e38-d018f105bd21"
+  }
+}

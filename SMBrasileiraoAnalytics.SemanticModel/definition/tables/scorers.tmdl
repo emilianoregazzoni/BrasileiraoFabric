@@ -1,0 +1,97 @@
+table scorers
+	lineageTag: 33f023af-20d8-4a0e-9916-99456c5dbef6
+	sourceLineageTag: [dbo].[scorers]
+
+	column rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 1927fd1a-a62d-4b58-916f-2a0b59537e2b
+		sourceLineageTag: rank
+		summarizeBy: sum
+		sourceColumn: rank
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ddbb487-0a29-43e0-913b-b9aa5f589edb
+		sourceLineageTag: player_id
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		lineageTag: 20cc307f-1dfc-4df6-8ed2-750db4b27796
+		sourceLineageTag: player_name
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_position
+		dataType: string
+		lineageTag: ad009858-ad98-4413-872c-82af37c5eec3
+		sourceLineageTag: player_position
+		summarizeBy: none
+		sourceColumn: player_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 489b4072-b1fe-4a8b-be84-f914cf331607
+		sourceLineageTag: team_id
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column team
+		dataType: string
+		lineageTag: 17a44877-3afe-4ece-b9f4-9c1987d848e9
+		sourceLineageTag: team
+		summarizeBy: none
+		sourceColumn: team
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamName
+		dataType: string
+		lineageTag: 8fb1ffb3-2cea-4e12-ae43-d33918c5efb9
+		sourceLineageTag: teamName
+		summarizeBy: none
+		sourceColumn: teamName
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c241943-c2b5-419a-89b3-0e568d1d0b29
+		sourceLineageTag: goals
+		summarizeBy: sum
+		sourceColumn: goals
+
+		annotation SummarizationSetBy = Automatic
+
+	column matches
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fca6e1c-3bfa-40a2-be3f-df455fe5255f
+		sourceLineageTag: matches
+		summarizeBy: sum
+		sourceColumn: matches
+
+		annotation SummarizationSetBy = Automatic
+
+	partition scorers = entity
+		mode: directLake
+		source
+			entityName: scorers
+			schemaName: dbo
+			expressionSource: 'DirectLake - DWBrasileirao'
+

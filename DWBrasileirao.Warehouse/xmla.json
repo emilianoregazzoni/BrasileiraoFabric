@@ -1,0 +1,677 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1606,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "brasileiraoCurrent",
+        "sourceLineageTag": "[dbo].[brasileiraoCurrent]",
+        "columns": [
+          {
+            "name": "season_id",
+            "dataType": "int64",
+            "sourceColumn": "season_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "season_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "position",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team_id",
+            "dataType": "int64",
+            "sourceColumn": "team_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "team_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "team",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "teamName",
+            "dataType": "string",
+            "sourceColumn": "teamName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "teamName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "points",
+            "dataType": "int64",
+            "sourceColumn": "points",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "points",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "games",
+            "dataType": "int64",
+            "sourceColumn": "games",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "games",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "victories",
+            "dataType": "int64",
+            "sourceColumn": "victories",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "victories",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "draws",
+            "dataType": "int64",
+            "sourceColumn": "draws",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "draws",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "losses",
+            "dataType": "int64",
+            "sourceColumn": "losses",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "losses",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_scored",
+            "dataType": "int64",
+            "sourceColumn": "goals_scored",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_scored",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_against",
+            "dataType": "int64",
+            "sourceColumn": "goals_against",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_against",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_difference",
+            "dataType": "int64",
+            "sourceColumn": "goals_difference",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_difference",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "brasileiraoCurrent",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dimBrasileirao",
+        "sourceLineageTag": "[dbo].[dimBrasileirao]",
+        "columns": [
+          {
+            "name": "year",
+            "dataType": "int64",
+            "sourceColumn": "year",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "year",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "position",
+            "dataType": "int64",
+            "sourceColumn": "position",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "position",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "teamKey",
+            "dataType": "int64",
+            "sourceColumn": "teamKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "teamKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "teamName",
+            "dataType": "string",
+            "sourceColumn": "teamName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "teamName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "points",
+            "dataType": "int64",
+            "sourceColumn": "points",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "points",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "games",
+            "dataType": "int64",
+            "sourceColumn": "games",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "games",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "victories",
+            "dataType": "int64",
+            "sourceColumn": "victories",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "victories",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "draws",
+            "dataType": "int64",
+            "sourceColumn": "draws",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "draws",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "losses",
+            "dataType": "int64",
+            "sourceColumn": "losses",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "losses",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_scored",
+            "dataType": "int64",
+            "sourceColumn": "goals_scored",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_scored",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_against",
+            "dataType": "int64",
+            "sourceColumn": "goals_against",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_against",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals_difference",
+            "dataType": "int64",
+            "sourceColumn": "goals_difference",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals_difference",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dimBrasileirao",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "dimTeam",
+        "sourceLineageTag": "[dbo].[dimTeam]",
+        "columns": [
+          {
+            "name": "teamKey",
+            "dataType": "int64",
+            "sourceColumn": "teamKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "teamKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "teamName",
+            "dataType": "string",
+            "sourceColumn": "teamName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "teamName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "dimTeam",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "scorers",
+        "sourceLineageTag": "[dbo].[scorers]",
+        "columns": [
+          {
+            "name": "rank",
+            "dataType": "int64",
+            "sourceColumn": "rank",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "rank",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "player_id",
+            "dataType": "int64",
+            "sourceColumn": "player_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "player_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "player_name",
+            "dataType": "string",
+            "sourceColumn": "player_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "player_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "player_position",
+            "dataType": "string",
+            "sourceColumn": "player_position",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "player_position",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team_id",
+            "dataType": "int64",
+            "sourceColumn": "team_id",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "team_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "team",
+            "dataType": "string",
+            "sourceColumn": "team",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "team",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "teamName",
+            "dataType": "string",
+            "sourceColumn": "teamName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "teamName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "goals",
+            "dataType": "int64",
+            "sourceColumn": "goals",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "goals",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "matches",
+            "dataType": "int64",
+            "sourceColumn": "matches",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "matches",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "scorers",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

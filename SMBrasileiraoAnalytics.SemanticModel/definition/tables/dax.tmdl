@@ -1,0 +1,112 @@
+table dax
+	lineageTag: a7098c9b-124b-47e1-8fef-00d69545167f
+
+	measure qtyTitulos =
+			
+			CALCULATE(
+			    COUNTROWS(dimBrasileirao),
+			    dimBrasileirao[position] = 1
+			)
+		formatString: 0
+		lineageTag: 32c52b0c-25d0-4441-b8ba-3946b6e929e3
+
+	measure points =
+			
+			SUM(dimBrasileirao[points])
+		formatString: 0
+		lineageTag: b8f87693-4d37-490b-85fe-2cdb586fc79b
+
+	measure 'Ranking Puntos Historicos' =
+			
+			RANKX(
+			    ALL(dimTeam[teamName]),
+			    [points],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 5749dfa3-01f9-4236-b0eb-605ff62f18bf
+
+	measure 'Temporadas Analizadas' =
+			
+			DISTINCTCOUNT(dimBrasileirao[year])
+		formatString: 0
+		lineageTag: 764b8cf6-d19d-47d0-8cf9-d5d51dc36f6a
+
+	measure 'Total Equipos Historicos' =
+			
+			DISTINCTCOUNT(dimBrasileirao[teamName])
+		formatString: 0
+		lineageTag: c89ba9b1-7e6b-4d3b-b3ca-8ece335771a2
+
+	measure 'Total Goles Historicos' =
+			
+			SUM(dimBrasileirao[goals_scored])
+		formatString: 0
+		lineageTag: 100c2440-bbd5-4788-bef6-ed9877b2d219
+
+	measure 'Goleador Actual' =
+			
+			VAR TopScorer =
+			    TOPN(
+			        1,
+			        ALL(scorers),
+			        scorers[goals],
+			        DESC
+			    )
+			RETURN
+			    MAXX(
+			        TopScorer,
+			        scorers[player_name]
+			    )
+		lineageTag: 396317d1-53f8-4ce4-9518-35edfa3ebf90
+
+	measure 'Promedio Goles por Equipo' =
+			
+			AVERAGEX(
+			    brasileiraoCurrent,
+			    brasileiraoCurrent[goals_scored]
+			)
+		lineageTag: 10e29216-03ff-4f17-a77e-8781241c947f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'equipo mas eficiente' =
+			
+			VAR TopTeam =
+			    TOPN(
+			        1,
+			        ADDCOLUMNS(
+			            ALL(brasileiraoCurrent),
+			            "PPG",
+			            DIVIDE(
+			                brasileiraoCurrent[points],
+			                brasileiraoCurrent[games]
+			            )
+			        ),
+			        [PPG],
+			        DESC
+			    )
+			RETURN
+			    MAXX(
+			        TopTeam,
+			        brasileiraoCurrent[teamName]
+			    )
+		lineageTag: 2a20b784-78c8-4842-9a5f-db16e98ed408
+
+	column Column
+		formatString: 0
+		lineageTag: 5b62186c-fefe-4faa-92cb-4b90cf0f9c82
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dax = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = ebc9072d60834c05a954229e303b723b
+

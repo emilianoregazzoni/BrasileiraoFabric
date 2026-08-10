@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "PLLoadBrasileiraoDW"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e4ab01df-c15f-b607-4a86-7a3341f8e4fe"
+  }
+}

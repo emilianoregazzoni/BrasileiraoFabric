@@ -1,0 +1,23 @@
+table DimSeason
+	lineageTag: b7338be6-8178-4930-8be0-38c25a31e314
+
+	column Year
+		formatString: 0
+		lineageTag: 96faaf41-b9d9-4612-9027-f571f1c3093e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimSeason = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS(
+				    GENERATESERIES(2003, 2026, 1),
+				    "Year", [Value]
+				)
+
+	annotation PBI_Id = a3ed904db07a4ed98c098dda32f97594
+
