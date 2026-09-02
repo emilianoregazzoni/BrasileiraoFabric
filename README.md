@@ -20,7 +20,6 @@ That gave me the perfect scenario to work with several areas of Microsoft Fabric
 - Power BI
 - Git integration with GitHub
 
-> I will summarize the main topics of the lab in order to keep the article readable.
 
 ## **Contents**
 
