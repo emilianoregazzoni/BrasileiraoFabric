@@ -1,6 +1,6 @@
 <h1 align="center">Building a Brasileirao Analytics Solution with MS Fabric 🟡🟢</h1>
 
-<p align="center"><strong><em>From historical Excel data and a REST API to a Medallion architecture, PySpark transformations, Fabric Warehouse, Direct Lake, Power BI, and GitHub integration.</em></strong></p>
+<p align="center"><strong>From historical Excel data and a REST API to a Medallion architecture, PySpark transformations, Fabric Warehouse, Direct Lake, Power BI, and GitHub integration.</strong></p>
 
 <p align="center">  <img src="assets/img_01.png" alt="Brasileirao Analytics with Microsoft Fabric" width="900"></p>
 
