@@ -2,7 +2,7 @@
 
 <p align="center"><strong><em>From historical Excel data and a REST API to a Medallion architecture, PySpark transformations, Fabric Warehouse, Direct Lake, Power BI, and GitHub integration.</em></strong></p>
 
-<p align="center">\n  <img src="assets/img_01.png" alt="Brasileirao Analytics with Microsoft Fabric" width="900">\n</p>
+<p align="center">  <img src="assets/img_01.png" alt="Brasileirao Analytics with Microsoft Fabric" width="900"></p>
 
 I wanted to build a Microsoft Fabric project. The idea was simple: use something I actually enjoy — Brazilian football — and turn it into an end-to-end data engineering project.
 
@@ -48,7 +48,7 @@ That gave me the perfect scenario to work with several areas of Microsoft Fabric
 
 First of all, I needed to have an Azure account and then create a Fabric resource. I created the resource with the minimum capacity.
 
-<p align="center">\n  <img src="assets/img_02.png" alt="Microsoft Fabric capacity" width="900">\n</p>
+<p align="center">  <img src="assets/img_02.png" alt="Microsoft Fabric capacity" width="900"></p>
 
 Once the Fabric resource was deployed in Azure, I created a dedicated Fabric workspace for the solution.
 
@@ -81,11 +81,11 @@ For example, according to both sources, Internacional finished the 2022 season i
 
 Using Postman and the `leagues` endpoint from sports.bzzoiro.com:
 
-<p align="center">\n  <img src="assets/img_03.png" alt="API validation using Postman" width="900">\n</p>
+<p align="center">  <img src="assets/img_03.png" alt="API validation using Postman" width="900"></p>
 
 Same information I have in the `.CSV` file:
 
-<p align="center">\n  <img src="assets/img_04.png" alt="Historical CSV validation" width="900">\n</p>
+<p align="center">  <img src="assets/img_04.png" alt="Historical CSV validation" width="900"></p>
 
 ---
 
@@ -97,11 +97,11 @@ The next step was creating the main Lakehouse:
 lakehouseBrasileirao
 ```
 
-<p align="center">\n  <img src="assets/img_05.png" alt="Lakehouse creation" width="900">\n</p>
+<p align="center">  <img src="assets/img_05.png" alt="Lakehouse creation" width="900"></p>
 
 The idea was to use OneLake as the central storage layer for both raw files and Delta tables.
 
-<p align="center">\n  <img src="assets/img_06.png" alt="Lakehouse structure" width="900">\n</p>
+<p align="center">  <img src="assets/img_06.png" alt="Lakehouse structure" width="900"></p>
 
 **The basic idea was simple:**
 
@@ -144,17 +144,17 @@ I used it to:
 
 **For example:**
 
-<p align="center">\n  <img src="assets/img_07.png" alt="Dataflow Gen2 transformations" width="900">\n</p>
+<p align="center">  <img src="assets/img_07.png" alt="Dataflow Gen2 transformations" width="900"></p>
 
 Since historical seasons don't change, this process only needs to be executed once.
 
-<p align="center">\n  <img src="assets/img_08.png" alt="Dataflow Gen2 destination" width="900">\n</p>
+<p align="center"> <img src="assets/img_08.png" alt="Dataflow Gen2 destination" width="900"></p>
 
 Then you need to click **Save and run**.
 
-<p align="center">\n  <img src="assets/img_09.png" alt="Save and run Dataflow Gen2" width="900">\n</p>
+<p align="center">  <img src="assets/img_09.png" alt="Save and run Dataflow Gen2" width="900"></p>
 
-<p align="center">\n  <img src="assets/img_10.png" alt="Historical Delta table created" width="900">\n</p>
+<p align="center">  <img src="assets/img_10.png" alt="Historical Delta table created" width="900"></p>
 
 ---
 
@@ -188,11 +188,11 @@ destination = Bronze/api/standings/{item().year}
 
 This meant one pipeline could ingest all four seasons instead of creating four nearly identical activities.
 
-<p align="center">\n  <img src="assets/img_11.png" alt="Parameterized pipeline" width="900">\n</p>
+<p align="center">  <img src="assets/img_11.png" alt="Parameterized pipeline" width="900"></p>
 
-<p align="center">\n  <img src="assets/img_12.png" alt="ForEach configuration" width="900">\n</p>
+<p align="center">  <img src="assets/img_12.png" alt="ForEach configuration" width="900"></p>
 
-<p align="center">\n  <img src="assets/img_13.png" alt="Dynamic source and destination paths" width="900">\n</p>
+<p align="center">  <img src="assets/img_13.png" alt="Dynamic source and destination paths" width="900"></p>
 
 ---
 
@@ -213,7 +213,7 @@ There was no reason to keep calling the API for those completed seasons.
 
 Only **2026** would need recurring ingestion going forward.
 
-<p align="center">\n  <img src="assets/img_14.png" alt="Bronze API files" width="900">\n</p>
+<p align="center">  <img src="assets/img_14.png" alt="Bronze API files" width="900"></p>
 
 ---
 
@@ -243,7 +243,7 @@ For three seasons with twenty teams each, the expected result was:
 3 seasons × 20 teams = 60 rows
 ```
 
-<p align="center">\n  <img src="assets/img_15.png" alt="PySpark exploded standings" width="900">\n</p>
+<p align="center">  <img src="assets/img_15.png" alt="PySpark exploded standings" width="900"></p>
 
 Then I mapped the API fields into my historical schema:
 
@@ -286,7 +286,7 @@ Other inconsistencies appeared with teams such as Bragantino and Sport.
 
 Because the dataset contained a manageable number of teams, I reviewed the distinct names and applied explicit mappings.
 
-<p align="center">\n  <img src="assets/img_16.png" alt="Team name normalization" width="900">\n</p>
+<p align="center">  <img src="assets/img_16.png" alt="Team name normalization" width="900"></p>
 
 > **One of the most useful lessons in the project:** matching schemas doesn't guarantee matching entities. Data integration requires semantic normalization too.
 
@@ -317,7 +317,7 @@ I intentionally kept **2026** outside this table.
 
 A completed historical season and an in-progress season represent different analytical states, so separating them keeps the model clearer.
 
-<p align="center">\n  <img src="assets/img_17.png" alt="Consolidated historical Silver table" width="900">\n</p>
+<p align="center">  <img src="assets/img_17.png" alt="Consolidated historical Silver table" width="900"></p>
 
 ---
 
@@ -346,7 +346,7 @@ goldBrasileiraoHistorical
 
 The Gold layer now contained structures ready for analytics.
 
-<p align="center">\n  <img src="assets/img_18.png" alt="Gold dimensional model" width="900">\n</p>
+<p align="center">  <img src="assets/img_18.png" alt="Gold dimensional model" width="900"></p>
 
 ---
 
@@ -359,11 +359,11 @@ For **2026** I decided to ingest two API datasets:
 - Current standings
 - Current top scorers
 
-<p align="center">\n  <img src="assets/img_19.png" alt="Current season API datasets" width="900">\n</p>
+<p align="center">  <img src="assets/img_19.png" alt="Current season API datasets" width="900"></p>
 
 **The pipeline contains two Copy Activities:**
 
-<p align="center">\n  <img src="assets/img_20.png" alt="Current season pipeline" width="900">\n</p>
+<p align="center">  <img src="assets/img_20.png" alt="Current season pipeline" width="900"></p>
 
 ```text
 Copy current standings ─┐
@@ -387,11 +387,11 @@ Historical data doesn't need recurring ingestion.
 
 I configured the current-season pipeline to execute **weekly on Monday**.
 
-<p align="center">\n  <img src="assets/img_21.png" alt="Weekly schedule configuration" width="900">\n</p>
+<p align="center">  <img src="assets/img_21.png" alt="Weekly schedule configuration" width="900"></p>
 
 The pipeline retrieves the latest `standings.json` and `scorers.json` and overwrites the current snapshot.
 
-<p align="center">\n  <img src="assets/img_22.png" alt="Current season scorers data" width="900">\n</p>
+<p align="center">  <img src="assets/img_22.png" alt="Current season scorers data" width="900"></p>
 
 For this project I didn't need historical weekly snapshots of 2026; I only wanted the latest league state.
 
@@ -428,7 +428,7 @@ scorers
 
 **The current tables are refreshed weekly after the API pipeline runs.**
 
-<p align="center">\n  <img src="assets/img_23.png" alt="Fabric Warehouse tables" width="900">\n</p>
+<p align="center">  <img src="assets/img_23.png" alt="Fabric Warehouse tables" width="900"></p>
 
 ---
 
@@ -460,13 +460,13 @@ Some of the metrics include:
 - Number of teams
 - Total historical goals
 
-<p align="center">\n  <img src="assets/img_24.png" alt="Historical Power BI dashboard" width="900">\n</p>
+<p align="center">  <img src="assets/img_24.png" alt="Historical Power BI dashboard" width="900"></p>
 
 One result initially surprised me: **more than 23,000 goals**.
 
 Instead of assuming the report was wrong, I checked in the Warehouse and verified the total.
 
-<p align="center">\n  <img src="assets/img_25.png" alt="Historical goals validation in Warehouse" width="900">\n</p>
+<p align="center">  <img src="assets/img_25.png" alt="Historical goals validation in Warehouse" width="900"></p>
 
 It was correct.
 
@@ -493,11 +493,11 @@ It includes:
 
 Because this page is connected to the recurring 2026 process, the values change as the weekly pipeline refreshes the data.
 
-<p align="center">\n  <img src="assets/img_26.png" alt="Brasileirao 2026 Power BI dashboard" width="900">\n</p>
+<p align="center">  <img src="assets/img_26.png" alt="Brasileirao 2026 Power BI dashboard" width="900"></p>
 
 Finally, the map of the solution is something like this:
 
-<p align="center">\n  <img src="assets/img_27.png" alt="End-to-end Microsoft Fabric architecture" width="900">\n</p>
+<p align="center">  <img src="assets/img_27.png" alt="End-to-end Microsoft Fabric architecture" width="900"></p>
 
 ---
 
@@ -509,27 +509,27 @@ I enabled GitHub integration at the Fabric tenant level and then connected the w
 
 The first step was going to the **Admin Portal** in Fabric.
 
-<p align="center">\n  <img src="assets/img_28.png" alt="Fabric Admin Portal" width="900">\n</p>
+<p align="center">  <img src="assets/img_28.png" alt="Fabric Admin Portal" width="900"></p>
 
 Enable the GitHub integration option:
 
-<p align="center">\n  <img src="assets/img_29.png" alt="Enable GitHub integration in Fabric" width="900">\n</p>
+<p align="center"> <img src="assets/img_29.png" alt="Enable GitHub integration in Fabric" width="900"></p>
 
 After some minutes I could click on the GitHub option:
 
-<p align="center">\n  <img src="assets/img_30.png" alt="GitHub connection option in Fabric" width="900">\n</p>
+<p align="center">  <img src="assets/img_30.png" alt="GitHub connection option in Fabric" width="900"></p>
 
 I connected my GitHub account:
 
-<p align="center">\n  <img src="assets/img_31.png" alt="GitHub repository connection" width="900">\n</p>
+<p align="center">  <img src="assets/img_31.png" alt="GitHub repository connection" width="900"></p>
 
 Then the repository was synced:
 
-<p align="center">\n  <img src="assets/img_32.png" alt="Fabric repository synced with GitHub" width="900">\n</p>
+<p align="center">  <img src="assets/img_32.png" alt="Fabric repository synced with GitHub" width="900"></p>
 
 After that, each item had a new **Git status** column:
 
-<p align="center">\n  <img src="assets/img_33.png" alt="Git status in Microsoft Fabric workspace" width="900">\n</p>
+<p align="center">  <img src="assets/img_33.png" alt="Git status in Microsoft Fabric workspace" width="900"> </p>
 
 ---
 
@@ -552,7 +552,3 @@ A special thanks to the creator of **sports.bzzoiro.com** for making this kind o
 I also used **GPT-5.5** as a development assistant during the project, mainly to support the creation and debugging of PySpark/Python code, DAX measures, and some architectural decisions while building the solution.
 
 ---
-
-## **Tech Stack**
-
-`Microsoft Fabric` · `OneLake` · `Lakehouse` · `Dataflow Gen2` · `Data Factory Pipelines` · `PySpark` · `Delta Lake` · `Fabric Warehouse` · `Direct Lake` · `Power BI` · `GitHub`
